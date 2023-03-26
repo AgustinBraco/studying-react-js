@@ -16,11 +16,11 @@ function ItemListContainer() {
 
     createCards
     .then((response) => {
-      if (brandName.id) {
+      if (brandName.id === "All") {
+        setCards(response)
+      } else if (brandName.id) {
         const cardsFiltered = response.filter((Products) => Products.brand == brandName.id)
         setCards(cardsFiltered)
-      } else {
-        setCards(response)
       }})
     .catch((err) => console.log(err))}, [brandName]);
 
