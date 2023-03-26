@@ -9,7 +9,7 @@ function ItemList({cardsFiltered}) {
         {cardsFiltered.map((arr) => {
           return (
             <div key={newId}>
-              <NavLink to={`/item/${arr.id}`}>
+              <NavLink to={`/item/${arr.id}`} className="card">
                 <img  src={arr.image} alt="motorcycle-image" className="cardImage" />
                 <p className="cardBrand">{arr.brand}</p>
                 <p className="cardModel">{arr.model}</p>
