@@ -1,5 +1,5 @@
-import ItemList from "../ItemList/index"
-import Products from "../../mocks/products"
+import ItemList from "../ItemList/index";
+import Products from "../../mocks/products";
 import {useEffect, useState} from "react";
 
 // Router
@@ -17,10 +17,10 @@ function ItemListContainer() {
     createCards
     .then((response) => {
       if (brandName.id === "All") {
-        setCards(response)
+        setCards(response);
       } else if (brandName.id) {
-        const cardsFiltered = response.filter((Products) => Products.brand == brandName.id)
-        setCards(cardsFiltered)
+        const cardsFiltered = response.filter((Products) => Products.brand == brandName.id);
+        setCards(cardsFiltered);
       }})
     .catch((err) => console.log(err))}, [brandName]);
 

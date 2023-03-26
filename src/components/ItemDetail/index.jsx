@@ -12,7 +12,6 @@ function ItemDetail({itemFound}) {
         <p className="detailColor">{itemFound.color}</p>
         <p className="detailPrice">$ {itemFound.price}</p>
       </div>
-
     </div>
   );
 };

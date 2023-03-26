@@ -14,7 +14,7 @@ function ItemList({cardsFiltered}) {
                 <p className="cardPrice">$ {arr.price}</p>
               </Link>
             </div>
-          )})}
+          )})};
       </div>
     );
 };

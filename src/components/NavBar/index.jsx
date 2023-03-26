@@ -1,7 +1,7 @@
 import './navbar.css';
 
 // Router
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function NavBar() {
   return (
@@ -16,7 +16,7 @@ function NavBar() {
         <Link to={'/brand/All'} className="brandLink">All</Link>
       </div>
     </div>
-  )
+  );
 };
 
 export default NavBar;
