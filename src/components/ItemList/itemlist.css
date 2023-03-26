@@ -1,0 +1,38 @@
+.cardsContainer {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.card {
+    text-decoration: none;
+    text-align: center;
+    margin: 2rem;
+    padding: 2rem;
+    color: var(--color-first);
+    transition: all ease 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    color: var(--color-second);
+}
+
+.cardImage {
+    width: 50rem;
+}
+
+.cardBrand {
+    font-weight: 1000;
+    font-size: 4rem;
+}
+
+.cardModel {
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.cardPrice {
+    font-weight: 400;
+    font-size: 2rem;
+}

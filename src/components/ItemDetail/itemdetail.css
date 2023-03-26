@@ -1,0 +1,55 @@
+.detailContainer {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.detailImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 60%;
+    overflow: hidden;
+}
+
+.detailTextContainer {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: start;
+    height: 90vh;
+    width: 40%;
+    color: var(--color-first);
+}
+
+.detailImage {
+    width: 80rem;
+    transition: all ease 1s;
+    object-fit: cover;
+}
+
+.detailImage:hover {
+    transform: scale(1.6);
+}
+
+.detailBrand {
+    font-weight: 1000;
+    font-size: 6rem;
+}
+
+.detailModel {
+    font-weight: 600;
+    font-size: 5rem;
+}
+
+.detailColor {
+    font-weight: 300;
+    font-size: 4rem;
+}
+
+.detailPrice {
+    font-weight: 800;
+    font-size: 5rem;
+}
