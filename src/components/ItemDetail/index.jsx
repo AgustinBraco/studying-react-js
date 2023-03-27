@@ -1,4 +1,5 @@
 import './itemdetail.css';
+import Purchaser from '../Purchaser';
 
 function ItemDetail({itemFound}) {
   return (
@@ -11,6 +12,7 @@ function ItemDetail({itemFound}) {
         <p className="detailModel">{itemFound.model}</p>
         <p className="detailColor">{itemFound.color}</p>
         <p className="detailPrice">$ {itemFound.price}</p>
+        <Purchaser itemFound={itemFound}></Purchaser>
       </div>
     </div>
   );

@@ -1,0 +1,60 @@
+.counterContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    text-align: center;
+}
+
+.decrease, .increase {
+    border: none;
+    color: var(--color-second);
+    font-size: 5rem;
+    margin: 3rem;
+    background-color: transparent;
+    transition: all ease 0.5s;
+}
+
+.decrease:hover, .increase:hover {
+    transform: scale(1.2);
+}
+
+.decrease:disabled, .increase:disabled {
+    color: lightgrey;
+}
+
+.amount {
+    font-size: 3rem;
+    width: 5rem;
+    text-align: center;
+    color: var(--color-second);
+}
+
+.addToCart {
+    color: white;
+    font-size: 2rem;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 3rem;
+    background-color: var(--color-second);
+    transition: all ease 0.4s;
+    margin: 3rem;
+}
+
+.addToCart:disabled {
+    background-color: grey;
+}
+
+.addToCart:disabled:hover{
+    background-color: grey;
+}
+
+.addToCart:hover {
+    background-color: var(--color-first);
+    transform: scale(0.95);
+}
+
+.stockAvailable {
+    color: var(--color-second);
+    font-size: 1.3rem;
+    text-align: center;
+}

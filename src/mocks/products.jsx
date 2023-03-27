@@ -5,7 +5,7 @@ export default [
         model: "Energicr",
         color: "Red",
         price: 100000,
-        stock: 1,
+        stock: 4,
         image: "/assets/images/motorcycle-1.jpg"
     },
     {
@@ -23,7 +23,7 @@ export default [
         model: "EVA",
         color: "White",
         price: 200000,
-        stock: 0,
+        stock: 4,
         image: '../assets/images/motorcycle-3.jpg'
     },
     {
@@ -32,7 +32,7 @@ export default [
         model: "Energicr",
         color: "Black",
         price: 1000000,
-        stock: 10,
+        stock: 5,
         image: '../assets/images/motorcycle-4.jpg'
     },
     {
