@@ -35,12 +35,3 @@
     color: var(--color-second);
     text-decoration: line-through 3px;
 }
-
-.cartLogo {
-    width: 3rem;
-    transition: ease all 0.5s;
-}
-
-.cartLogo:hover {
-    transform: scale(1.15);
-}

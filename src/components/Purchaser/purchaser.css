@@ -55,6 +55,7 @@
 
 .stockAvailable {
     color: var(--color-second);
-    font-size: 1.3rem;
+    font-weight: 600;
+    font-size: 1.5rem;
     text-align: center;
 }
