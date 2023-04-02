@@ -1,5 +1,4 @@
 import NavBar from "../components/NavBar";
-import Cart from "../components/Cart/Cart";
 
 function CheckoutRoot() {
   return (

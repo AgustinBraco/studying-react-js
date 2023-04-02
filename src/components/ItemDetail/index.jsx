@@ -1,11 +1,15 @@
-import './itemdetail.css';
-import Purchaser from '../Purchaser';
+import "./itemdetail.css";
+import Purchaser from "../Purchaser";
 
-function ItemDetail({itemFound}) {
+function ItemDetail({ itemFound }) {
   return (
     <div className="detailContainer">
       <div className="detailImageContainer">
-        <img src={itemFound.image} className="detailImage" alt="motorcycle-detail-image" />
+        <img
+          src={itemFound.image}
+          className="detailImage"
+          alt="motorcycle-detail-image"
+        />
       </div>
       <div className="detailTextContainer">
         <p className="detailBrand">{itemFound.brand}</p>
@@ -16,6 +20,6 @@ function ItemDetail({itemFound}) {
       </div>
     </div>
   );
-};
+}
 
 export default ItemDetail;
