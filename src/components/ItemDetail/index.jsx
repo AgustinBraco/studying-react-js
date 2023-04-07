@@ -1,25 +1,29 @@
 import "./itemdetail.css";
 import Purchaser from "../Purchaser";
 
-function ItemDetail({ itemFound }) {
-  return (
-    <div className="detailContainer">
-      <div className="detailImageContainer">
-        <img
-          src={itemFound.image}
-          className="detailImage"
-          alt="motorcycle-detail-image"
-        />
+function ItemDetail({ product }) {
+  if (!product) {
+    return <h1>Loading...</h1>;
+  } else {
+    return (
+      <div className="detailContainer">
+        <div className="detailImageContainer">
+          <img
+            src={product.image}
+            className="detailImage"
+            alt="motorcycle-detail-image"
+          />
+        </div>
+        <div className="detailTextContainer">
+          <p className="detailBrand">{product.brand}</p>
+          <p className="detailModel">{product.model}</p>
+          <p className="detailColor">{product.color}</p>
+          <p className="detailPrice">$ {product.price}</p>
+          <Purchaser product={product}></Purchaser>
+        </div>
       </div>
-      <div className="detailTextContainer">
-        <p className="detailBrand">{itemFound.brand}</p>
-        <p className="detailModel">{itemFound.model}</p>
-        <p className="detailColor">{itemFound.color}</p>
-        <p className="detailPrice">$ {itemFound.price}</p>
-        <Purchaser itemFound={itemFound}></Purchaser>
-      </div>
-    </div>
-  );
-}
+    );
+  };
+};
 
 export default ItemDetail;

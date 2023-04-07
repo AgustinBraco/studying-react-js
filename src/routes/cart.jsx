@@ -1,5 +1,5 @@
 import NavBar from "../components/NavBar";
-import Cart from "../components/Cart/Cart";
+import Cart from "../components/Cart";
 
 function CartRoot() {
   return (

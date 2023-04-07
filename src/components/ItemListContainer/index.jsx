@@ -1,31 +1,51 @@
 import ItemList from "../ItemList/index";
-import Products from "../../mocks/products";
 import { useEffect, useState } from "react";
+
+// Firebase
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
 
 // Router
 import { useParams } from "react-router-dom";
 
 function ItemListContainer() {
   const brandName = useParams();
-  const [cards, setCards] = useState([]);
+  const [products, setProducts] = useState(null);
 
   useEffect(() => {
-    const createCards = new Promise((resolve, reject) => resolve(Products));
+    const db = getFirestore();
+    const itemsCollection = collection(db, "items");
+    setProducts(null);
 
-    createCards
-      .then((response) => {
-        if (brandName.id === "All") {
-          setCards(response);
-        } else if (brandName.id) {
-          const cardsFiltered = response.filter(
-            (Products) => Products.brand == brandName.id
-          );
-          setCards(cardsFiltered);
-        }})
-      .catch((err) => console.log(err));
+    setTimeout(() => {
+      if (brandName.id === "All") {
+        getDocs(itemsCollection)
+          .then((snapshot) => {
+            const docs = snapshot.docs;
+            setProducts(docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+          })
+          .catch((err) => console.log("Catch error:", err));
+      } else {
+        const queryResult = query(
+          itemsCollection,
+          where("brand", "==", brandName.id)
+        );
+        getDocs(queryResult)
+          .then((snapshot) => {
+            const docs = snapshot.docs;
+            setProducts(docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+          })
+          .catch((err) => console.log("Catch error:", err));
+      };
+    }, 200);
   }, [brandName]);
 
-  return <ItemList cardsFiltered={cards} />;
-}
+  return <ItemList products={products} />;
+};
 
 export default ItemListContainer;
