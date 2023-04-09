@@ -6,7 +6,9 @@ import { Context } from "../../context";
 import { Link } from "react-router-dom";
 
 function CartWidget() {
-  const { cart } = useContext(Context);
+  const { cartStorage } = useContext(Context);
+
+  const cartNumber = cartStorage.reduce((acc, product) => acc + product.quantity, 0)
 
   return (
     <div className="cartContainer">
@@ -16,7 +18,7 @@ function CartWidget() {
           alt="cart-logo"
           className="cartLogo"
         />
-        <span className="cartNumber">{cart.length}</span>
+        <span className="cartNumber">{cartNumber}</span>
       </Link>
     </div>
   );

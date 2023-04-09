@@ -1,26 +1,32 @@
 .topCartContainer {
     display: flex;
-    flex-flow: row;
-    justify-content: center;
+    flex-flow: column;
+    align-items: center;
     padding: 2rem;
 }
 
-.topCartLink {
+.topCartTotal {
+    font-size: 3rem;
+    color: var(--color-first);
+}
+
+.topCartButton {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    width: 30rem;
+    width: 10rem;
     height: 5rem;
-    margin-inline: 3rem;
+    margin: 1rem;
     text-decoration: none;
     color: white;
     background-color: var(--color-second);
     border-radius: 2rem;
     transition: ease 0.3s all;
+    border: none;
 }
 
-.topCartLink:hover {
+.topCartButton:hover {
     color: white;
     background-color: var(--color-first);
 }

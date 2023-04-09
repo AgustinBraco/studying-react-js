@@ -1,10 +1,11 @@
 import NavBar from "../components/NavBar";
+import Checkout from "../components/Checkout";
 
 function CheckoutRoot() {
   return (
   <div>
     <NavBar />
-    <p>CHECKOUT</p>
+    <Checkout />
   </div>
   );
 };

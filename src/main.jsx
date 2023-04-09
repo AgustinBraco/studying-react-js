@@ -1,34 +1,36 @@
 import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { CustomProvider } from './context';
+
+// Roots
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from './routes/root';
 import ItemRoot from './routes/item';
 import DetailRoot from './routes/detail';
 import CartRoot from './routes/cart';
 import CheckoutRoot from './routes/checkout';
-import { CustomProvider } from './context';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-// Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
+import ErrorRoot from './routes/error';
 
 //Firebase
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDCShip-k1X2Gu2xcIwaf6tvsteDf6tqJU",
-  authDomain: "react-project-b9c82.firebaseapp.com",
-  projectId: "react-project-b9c82",
-  storageBucket: "react-project-b9c82.appspot.com",
-  messagingSenderId: "150175569333",
-  appId: "1:150175569333:web:2842cb90f4e49137f475fc",
-  measurementId: "G-L0HX1CPZQF"
+  apiKey: import.meta.env.VITE_REACT_API_KEY,
+  authDomain: import.meta.env.VITE_REACT_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_REACT_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_REACT_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_REACT_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_REACT_APP_ID,
+  measurementId: import.meta.env.VITE_REACT_MEASUREMENT_ID
 };
 
 initializeApp(firebaseConfig);
 
 const router = createBrowserRouter([
+  {
+    errorElement: <ErrorRoot />,
+  },
   {
     path: "/",
     element: <Root />,

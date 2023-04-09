@@ -5,8 +5,15 @@ import { Context } from "../../context";
 const Purchaser = ({ product }) => {
   const { count, setCount, addToCart } = useContext(Context);
 
-  return (
-    <div className="purchaserContainer">
+  if (product.stock <= 0) {
+    return (
+      <div>
+        <p className="stockUnavailable">OUT OF STOCK</p>
+      </div>
+    );
+  } else {
+    return (
+      <div className="purchaserContainer">
       <div className="counterContainer">
         <button className="decrease" onClick={() => setCount(count - 1)} disabled={count <= 0}>-</button>
         <span className="amount">{count}</span>
@@ -15,7 +22,8 @@ const Purchaser = ({ product }) => {
       </div>
       <p className="stockAvailable">TOTAL UNITS: {product.stock}</p>
     </div>
-  );
+    );
+  };
 };
 
 export default Purchaser;

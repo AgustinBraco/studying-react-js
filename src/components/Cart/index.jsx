@@ -6,19 +6,21 @@ import { Context } from "../../context";
 import { Link } from "react-router-dom";
 
 function Cart() {
-  const { cart } = useContext(Context);
+  const { totalPrice, clearCart, removeProduct, cartStorage } = useContext(Context);
 
-  if (cart.length === 0) {
+  if (cartStorage.length === 0) {
     return <h2>Empty cart</h2>;
   } else {
     return (
       <div>
         <div className="topCartContainer">
-          <Link to={"/checkout"} className="topCartLink">
-            CONTINUE TO CHECKOUT
+          <p className="topCartTotal">TOTAL: US$ {totalPrice}</p>
+          <Link to={"/checkout"} className="topCartButton">
+            GO TO PAY
           </Link>
+          <button className="topCartButton" onClick={clearCart}>CLEAR</button>
         </div>
-        {cart.map((arr) => {
+        {cartStorage.map((arr) => {
           return (
             <div className="itemsCartContainer" key={arr.id}>
               <div>
@@ -35,11 +37,11 @@ function Cart() {
                 <p className="itemCartTextFirst">{arr.brand}</p>
                 <p className="itemCartTextFirst">{arr.model}</p>
                 <p className="itemCartTextSecond">{arr.color}</p>
-                <p className="itemCartTextSecond">Unit: $ {arr.price}</p>
-                <p className="itemCartTextSecond">TOTAL: $ {arr.price * arr.quantity}</p>
+                <p className="itemCartTextSecond">Unit: US$ {arr.price}</p>
+                <p className="itemCartTextSecond">TOTAL: US$ {arr.price * arr.quantity}</p>
               </div>
               <div>
-                <button className="itemCartDelete">X</button>
+                <button className="itemCartDelete" onClick={() => removeProduct(arr.id)}>X</button>
               </div>
             </div>
           );

@@ -18,7 +18,7 @@ function ItemDetail({ product }) {
           <p className="detailBrand">{product.brand}</p>
           <p className="detailModel">{product.model}</p>
           <p className="detailColor">{product.color}</p>
-          <p className="detailPrice">$ {product.price}</p>
+          <p className="detailPrice">US$ {product.price}</p>
           <Purchaser product={product}></Purchaser>
         </div>
       </div>

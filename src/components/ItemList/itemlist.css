@@ -5,18 +5,21 @@
     margin: 2rem;
 }
 
+.cardHover {
+    transition: all ease 0.5s;
+}
+
+.cardHover:hover {
+    transform: scale(1.2);
+    color: var(--color-second);
+}
+
 .card {
     text-decoration: none;
     text-align: center;
     margin: 2rem;
     padding: 2rem;
     color: var(--color-first);
-    transition: all ease 0.5s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    color: var(--color-second);
 }
 
 .cardImage {

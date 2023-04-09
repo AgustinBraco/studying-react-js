@@ -14,7 +14,7 @@ function ItemList({ products }) {
       <div className="cardsContainer">
         {products.map((arr) => {
           return (
-            <div key={arr.id}>
+            <div key={arr.id} className="cardHover">
               <Link to={`/item/${arr.id}`} className="card">
                 <img
                   src={arr.image}
@@ -23,11 +23,11 @@ function ItemList({ products }) {
                 />
                 <p className="cardBrand">{arr.brand}</p>
                 <p className="cardModel">{arr.model}</p>
-                <p className="cardPrice">$ {arr.price}</p>
+                <p className="cardPrice">US$ {arr.price}</p>
               </Link>
             </div>
           );
-        })};
+        })}
       </div>
     );
   };
