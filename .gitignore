@@ -1,4 +1,4 @@
 node_modules/
 desktop.ini
-.env
 .vercel
+.env
