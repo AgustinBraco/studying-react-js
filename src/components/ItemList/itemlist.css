@@ -5,38 +5,56 @@
     margin: 2rem;
 }
 
-.cardHover {
-    transition: all ease 0.5s;
-}
-
-.cardHover:hover {
-    transform: scale(1.2);
-    color: var(--color-second);
-}
-
 .card {
+    display: flex;
+    flex-flow: column nowrap;
+    transition: all ease 0.5s;
+    width: 45rem;
+    height: 50rem;
+    margin-inline: 5rem;
+    margin-block: 2rem;
+    border-bottom: 5px solid var(--color-first);
+    border-radius: 1.5rem;
+}
+
+.card:hover {
+    transform: scale(1.15);
+}
+
+.cardLink {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
     text-decoration: none;
     text-align: center;
-    margin: 2rem;
-    padding: 2rem;
+    margin: auto;
+    padding: 1rem;
     color: var(--color-first);
 }
 
 .cardImage {
-    width: 50rem;
+    height: 70%;
 }
 
 .cardBrand {
     font-weight: 1000;
-    font-size: 4rem;
+    font-size: 3rem;
+    height: 10%;
 }
 
 .cardModel {
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    height: 10%;
+
 }
 
 .cardPrice {
     font-weight: 400;
     font-size: 2rem;
+    height: 10%;
+
 }

@@ -54,20 +54,22 @@ function Home() {
 
   if (login) {
     return (
-      <div>
-      <p>Welcome</p>
-      <p>Your user is: {user}</p>
-      <p>Your password is: {password}</p>
-      <button onClick={forgetUser}>Forget user</button>
+      <div className="logedContainer">
+        <p className="logedWelcome">Welcome</p>
+        <p className="logedUser">Your user is: {user}</p>
+        <p className="logedPassword">Your password is: {password}</p>
+      <button onClick={forgetUser} className="logedButton">Forget user</button>
     </div>
     );
   } else if (!login) {
     return (
       <div className="loginContainer">
         <p className="loginText">Register</p>
-          <input required minLength={3} maxLength={20} type="text" placeholder="User" className="inputUser" value={user} onChange={handleUser}/>
-          <input required minLength={3} maxLength={20} type="text" placeholder="Password" className="inputPassword" value={password} onChange={handlePassword}/>
-          <button onClick={() => register(user, password)} className="sendForm">Send</button>
+          <form className="form">
+            <input required minLength={3} maxLength={20} type="text" placeholder="User" className="inputUser" value={user} onChange={handleUser}/>
+            <input required minLength={3} maxLength={20} type="text" placeholder="Password" className="inputPassword" value={password} onChange={handlePassword}/>
+            <button onClick={() => register(user, password)} className="sendForm">Send</button>
+          </form>
       </div>
     );
   };

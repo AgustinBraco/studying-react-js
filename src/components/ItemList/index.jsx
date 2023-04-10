@@ -14,8 +14,8 @@ function ItemList({ products }) {
       <div className="cardsContainer">
         {products.map((arr) => {
           return (
-            <div key={arr.id} className="cardHover">
-              <Link to={`/item/${arr.id}`} className="card">
+            <div key={arr.id} className="card">
+              <Link to={`/item/${arr.id}`} className="cardLink">
                 <img
                   src={arr.image}
                   alt="motorcycle-image"

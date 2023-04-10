@@ -32,11 +32,11 @@ function Checkout() {
     return (
         <div>
             <form>
-            <input required minLength={3} maxLength={20}  type="text" placeholder="Name" value={buyerName} onChange={handleName}/>
-            <input required minLength={3} maxLength={30}  type="email" placeholder="Email" value={buyerEmail} onChange={handleEmail}/>
-            <input required minLength={3} maxLength={30}  type="email" placeholder="Repeat email" value={buyerEmailRepeated} onChange={handleEmailRepeated}/>
-            <input required minLength={3} type="number" placeholder="Phone" value={buyerPhone} onChange={handlePhone}/>
-            <button disabled={cartStorage.length <= 0} onClick={() => buy(buyerName, buyerEmail, buyerEmailRepeated, buyerPhone)}>Confirm purchase</button>
+                <input required minLength={3} maxLength={20}  type="text" placeholder="Name" value={buyerName} onChange={handleName}/>
+                <input required minLength={3} maxLength={30}  type="email" placeholder="Email" value={buyerEmail} onChange={handleEmail}/>
+                <input required minLength={3} maxLength={30}  type="email" placeholder="Repeat email" value={buyerEmailRepeated} onChange={handleEmailRepeated}/>
+                <input required minLength={3} type="number" placeholder="Phone" value={buyerPhone} onChange={handlePhone}/>
+                <button disabled={cartStorage.length <= 0} onClick={() => buy(buyerName, buyerEmail, buyerEmailRepeated, buyerPhone)}>Confirm purchase</button>
             </form>
             <Link to={"/"}>HOME</Link>
         </div>
