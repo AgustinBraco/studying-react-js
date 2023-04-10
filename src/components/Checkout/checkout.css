@@ -1,0 +1,72 @@
+.checkoutContainer {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.inputName, .inputEmail, .inputPhone {
+    color: var(--color-first);
+    text-align: center;
+    width: 50rem;
+    height: 5rem;
+    font-size: 2.5rem;
+    margin-block: 3rem;
+    border: 0;
+    border-bottom: 2px solid var(--color-first);
+    border-radius: 1rem;
+}
+
+.inputName::placeholder, .inputEmail::placeholder, .inputPhone::placeholder {
+    color: var(--color-second);
+    font-size: 1.8rem;
+}
+
+.inputName:focus, .inputEmail:focus, .inputPhone:focus, .inputName:active, .inputEmail:active, .inputPhone:active {
+    outline: none;
+    border-bottom: 4px solid var(--color-first);
+}
+
+.inputPhone::-webkit-inner-spin-button {
+    display: none;
+}
+
+.buyButton {
+    width: 25rem;
+    height: 4rem;
+    color: white;
+    background-color: var(--color-second);
+    transition: all ease 0.5s;
+    border-radius: 2rem;
+    border: 0;
+    font-size: 1.7rem;
+}
+
+.buyButton:hover {
+    transform: scale(1.1);
+    background-color: var(--color-first);
+}
+
+.buyButton:disabled {
+    background-color: lightgrey;
+        transform: scale(1);
+}
+
+.checkoutCartLink {
+    width: 15%;
+    text-align: center;
+    margin-block: 5rem;
+    font-size: 1.7rem;
+    color: var(--color-second);
+    transition: all ease 0.5s;
+}
+
+.checkoutCartLink:hover {
+    transform: scale(1.1);
+}
+
+.checkoutBagImage {
+    margin-block: 2rem;
+    width: 6rem;
+}

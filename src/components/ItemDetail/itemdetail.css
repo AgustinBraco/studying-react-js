@@ -1,31 +1,32 @@
 .detailContainer {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
+    height: 90vh;
 }
 
 .detailImageContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
-    width: 60%;
+    height: 100%;
+    width: 70%;
     overflow: hidden;
 }
 
 .detailTextContainer {
     display: flex;
-    flex-flow: column;
+    flex-flow: column nowrap;
     justify-content: center;
-    align-items: start;
-    height: 90vh;
-    width: 40%;
+    align-items: center;
+    height: 100%;
+    width: 30%;
     color: var(--color-first);
 }
 
 .detailImage {
-    width: 80rem;
+    width: 70%;
     transition: all ease 1s;
     object-fit: cover;
 }
@@ -36,20 +37,24 @@
 
 .detailBrand {
     font-weight: 1000;
-    font-size: 6rem;
+    font-size: 5rem;
+    margin-block: 1rem;
 }
 
 .detailModel {
     font-weight: 600;
     font-size: 5rem;
+    margin-block: 1rem;
 }
 
 .detailColor {
     font-weight: 300;
     font-size: 4rem;
+    margin-block: 2rem;
 }
 
 .detailPrice {
     font-weight: 800;
-    font-size: 5rem;
+    font-size: 4rem;
+    margin-block: 2rem;
 }

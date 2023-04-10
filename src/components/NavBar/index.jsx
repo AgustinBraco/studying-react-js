@@ -27,7 +27,7 @@ function NavBar() {
           Suzuki
         </Link>
         <Link to={"/brand/All"} className="brandLink">
-          All
+          SHOP
         </Link>
         <CartWidget></CartWidget>
       </div>

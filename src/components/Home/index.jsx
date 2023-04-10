@@ -20,14 +20,16 @@ function Home() {
     if (user.length <= 0 || user.length > 20) {
       swal({
         title: "Invalid user",
-        text: "Must be a value between 3 and 20 characters",
+        text: "Must be a value between 1 and 20 characters",
+        icon: "error",
         timer: 5000,
         button: false,
       });
     } else if (password.length <= 0 || password.length > 20) {
       swal({
         title: "Invalid password",
-        text: "Must be a value between 3 and 20 characters",
+        text: "Must be a value between 1 and 20 characters",
+        icon: "error",
         timer: 5000,
         button: false,
       });
@@ -35,6 +37,12 @@ function Home() {
       setUserStorage(user);
       setPasswordStorage(passsword);
       setLogin(true);
+      swal({
+        title: "User created",
+        icon: "success",
+        timer: 1500,
+        button: false,
+      });
     };
   };
 
@@ -46,10 +54,16 @@ function Home() {
     setPassword(event.target.value);
   };
 
-  function forgetUser () {
+  function deleteUser () {
     localStorage.removeItem("user");
     localStorage.removeItem("password");
     setLogin(false);
+    swal({
+      title: "User deleted",
+      icon: "success",
+      timer: 1500,
+      button: false,
+    });
   };
 
   if (login) {
@@ -58,7 +72,7 @@ function Home() {
         <p className="logedWelcome">Welcome</p>
         <p className="logedUser">Your user is: {user}</p>
         <p className="logedPassword">Your password is: {password}</p>
-      <button onClick={forgetUser} className="logedButton">Forget user</button>
+      <button onClick={deleteUser} className="logedButton">Delete user</button>
     </div>
     );
   } else if (!login) {
@@ -66,8 +80,8 @@ function Home() {
       <div className="loginContainer">
         <p className="loginText">Register</p>
           <form className="form">
-            <input required minLength={3} maxLength={20} type="text" placeholder="User" className="inputUser" value={user} onChange={handleUser}/>
-            <input required minLength={3} maxLength={20} type="text" placeholder="Password" className="inputPassword" value={password} onChange={handlePassword}/>
+            <input required maxLength={20} type="text" placeholder="User" className="inputUser" value={user} onChange={handleUser}/>
+            <input required maxLength={20} type="text" placeholder="Password" className="inputPassword" value={password} onChange={handlePassword}/>
             <button onClick={() => register(user, password)} className="sendForm">Send</button>
           </form>
       </div>

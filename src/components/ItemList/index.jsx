@@ -8,7 +8,7 @@ function ItemList({ products }) {
   setCount(0);
 
   if (!products) {
-    return <h1>Loading...</h1>;
+    return <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
   } else {
     return (
       <div className="cardsContainer">

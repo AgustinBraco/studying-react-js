@@ -30,15 +30,21 @@ function Checkout() {
     };
 
     return (
-        <div>
-            <form>
-                <input required minLength={3} maxLength={20}  type="text" placeholder="Name" value={buyerName} onChange={handleName}/>
-                <input required minLength={3} maxLength={30}  type="email" placeholder="Email" value={buyerEmail} onChange={handleEmail}/>
-                <input required minLength={3} maxLength={30}  type="email" placeholder="Repeat email" value={buyerEmailRepeated} onChange={handleEmailRepeated}/>
-                <input required minLength={3} type="number" placeholder="Phone" value={buyerPhone} onChange={handlePhone}/>
-                <button disabled={cartStorage.length <= 0} onClick={() => buy(buyerName, buyerEmail, buyerEmailRepeated, buyerPhone)}>Confirm purchase</button>
+        <div className="checkoutContainer">
+            <form className="form">
+                <input required minLength={3} maxLength={20}  type="text" placeholder="Name" value={buyerName} onChange={handleName} className="inputName"/>
+                <input required minLength={3} maxLength={30}  type="email" placeholder="Email" value={buyerEmail} onChange={handleEmail} className="inputEmail"/>
+                <input required minLength={3} maxLength={30}  type="email" placeholder="Repeat email" value={buyerEmailRepeated} onChange={handleEmailRepeated} className="inputEmail"/>
+                <input required minLength={3} type="number" placeholder="Phone" value={buyerPhone} onChange={handlePhone} className="inputPhone"/>
+                <button disabled={cartStorage.length <= 0} onClick={() => buy(buyerName, buyerEmail, buyerEmailRepeated, buyerPhone)} className="buyButton">CONFIRM PURCHASE</button>
             </form>
-            <Link to={"/"}>HOME</Link>
+            <Link to={"/cart"} className="checkoutCartLink">
+                <img 
+                src="/assets/images/bag.png" 
+                alt="bag-image" 
+                className="checkoutBagImage"/>
+                <p>Return to cart</p>
+            </Link>
         </div>
     );
 };

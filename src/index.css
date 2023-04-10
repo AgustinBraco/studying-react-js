@@ -1,15 +1,12 @@
 /* Google font */
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap");
 
-/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
-
 /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Comfortaa", Helvetica, Arial, sans-serif;
-  /* font-family: 'Bebas Neue', sans-serif; */
 }
 
 /* Root */
@@ -22,6 +19,7 @@ html {
   --color-second: #7f4a88;
 }
 
+/* 404 */
 .errorTitle {
   color: var(--color-first);
   font-size: 2rem;
@@ -35,4 +33,20 @@ html {
 .errorLink {
   color: var(--color-second);
   font-size: 2.5rem;
+}
+
+/* Sweet alert */
+.swal-modal {
+  height: 25rem;
+  width: 60rem;
+}
+
+.swal-title {
+  color: var(--color-first);
+}
+
+.swal-text {
+  font-size: 2rem;
+  color: var(--color-second);
+  text-align: center;
 }

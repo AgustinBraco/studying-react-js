@@ -4,7 +4,7 @@ import { createContext, useState, useEffect } from "react";
 import { collection, getFirestore, addDoc, doc, updateDoc } from "firebase/firestore";
 
 // Sweet alert
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 export const Context = createContext();
 export function CustomProvider({ children }) {
@@ -34,11 +34,20 @@ export function CustomProvider({ children }) {
         };
 
       setCartStorage(cartStorage.map((cart) => cart.id === product.id ? productModified : cart));
-
       setCount(0);
-
+      swal({
+        title: "Added to cart",
+        icon: "success",
+        timer: 1500,
+        button: false,
+      });
       } else {
-        swal("Insufficient stock")
+        swal({
+          title: "Insufficient stock",
+          icon: "error",
+          timer: 1500,
+          button: false,
+        });
       };
     } else {
       setCartStorage([...cartStorage, {
@@ -46,15 +55,33 @@ export function CustomProvider({ children }) {
         quantity: product.quantity + count,
       }]);
       setCount(0);
+      swal({
+        title: "Added to cart",
+        icon: "success",
+        timer: 1500,
+        button: false,
+      });
     };
   };
   
   function removeProduct(id) {
     setCartStorage(cartStorage.filter((cart) => cart.id !== id));
+    swal({
+      title: "Removed",
+      icon: "success",
+      timer: 1500,
+      button: false,
+    });
   };
 
   function clearCart() {
     setCartStorage([]);
+    swal({
+      title: "Cart cleared",
+      icon: "success",
+      timer: 1500,
+      button: false,
+    });
   };
 
   // Lógica para ordenes
@@ -65,9 +92,19 @@ export function CustomProvider({ children }) {
     event.preventDefault();
 
     if (buyerName.length < 3 || buyerPhone.length < 3 || buyerEmail.length < 3 || buyerEmailRepeated.length < 3) {
-      swal("Please complete the fields");
+      swal({
+        title: "Please complete all the fields",
+        icon: "error",
+        timer: 3000,
+        button: false,
+      });
     } else if (buyerEmail !== buyerEmailRepeated) {
-      swal("Emails doesn't match");
+      swal({
+        title: "Emails doesn't match",
+        icon: "error",
+        timer: 2500,
+        button: false,
+      });
     } else if (buyerEmail === buyerEmailRepeated) {
       const order = {
         buyer: {name: {buyerName}, email:  {buyerEmail}, phone: {buyerPhone}},
@@ -79,8 +116,14 @@ export function CustomProvider({ children }) {
       addDoc(collectionRef, order)
       .then((res) => {
         const orderId = res.id;
-        swal(`Thanks for your purchase, your order ID is ${orderId}`)
-  
+        swal({
+          title: "Thanks for your purchase",
+          text: `Your order ID is \n ${orderId}`,
+          icon: "success",
+          timer: 2500,
+          button: false,
+        });
+
         cartStorage.map((product) => {
           const newStock = product.stock - product.quantity
           updateOrder(product, newStock)});

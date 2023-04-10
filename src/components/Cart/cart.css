@@ -1,7 +1,34 @@
+.emptyCartContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 5rem;
+}
+
+.bagImage {
+    width: 15rem;
+    margin: 4rem;
+}
+
+.emptyCartText {
+    font-size: 4rem;
+    color: var(--color-first);
+    margin: 2rem;
+}
+
+.emptyCartLink {
+    font-size: 3rem;
+    color: var(--color-second);
+    margin: 1rem;
+}
+
 .topCartContainer {
     display: flex;
-    flex-flow: column;
+    flex-flow: row nowrap;
+    justify-content: space-around;
     align-items: center;
+    width: 60%;
+    margin: auto;
     padding: 2rem;
 }
 
@@ -10,25 +37,35 @@
     color: var(--color-first);
 }
 
-.topCartButton {
+.checkoutButton {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    width: 10rem;
+    width: 15rem;
     height: 5rem;
-    margin: 1rem;
     text-decoration: none;
     color: white;
     background-color: var(--color-second);
     border-radius: 2rem;
-    transition: ease 0.3s all;
-    border: none;
+    transition: ease 0.5s all;
 }
 
-.topCartButton:hover {
-    color: white;
+.checkoutButton:hover {
     background-color: var(--color-first);
+    transform: scale(1.08);
+}
+
+.paperbinDiv {
+    transition: ease 0.5s all;
+}
+
+.paperbinDiv:hover {
+    transform: scale(1.3);
+}
+
+.paperbinImage {
+    width: 4rem;
 }
 
 .itemsCartContainer {
@@ -40,7 +77,7 @@
     margin: auto;
     margin-block: 2rem;
     padding: 2rem;
-    border: solid var(--color-second) 2px;
+    border-bottom: solid var(--color-second) 4px;
     border-radius: 4rem;
 }
 
@@ -50,12 +87,14 @@
 
 .itemCartTextFirst {
     color: var(--color-first);
-    font-size: 2.5rem;
+    font-size: 3rem;
+    margin-block: 1.5rem;
 }
 
 .itemCartTextSecond {
     color: var(--color-second);
     font-size: 2rem;
+    margin-block: 1rem;
 }
 
 .itemCartDelete {
@@ -63,4 +102,10 @@
     color: var(--color-first);
     background-color: transparent;
     border: none;
+    transition: ease all 0.3s;
+}
+
+.itemCartDelete:hover {
+    transform: scale(1.3);
+    color: red;
 }

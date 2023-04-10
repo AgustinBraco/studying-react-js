@@ -1,9 +1,10 @@
 import "./itemdetail.css";
 import Purchaser from "../Purchaser";
 
+
 function ItemDetail({ product }) {
   if (!product) {
-    return <h1>Loading...</h1>;
+    return <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
   } else {
     return (
       <div className="detailContainer">
