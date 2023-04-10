@@ -4,7 +4,7 @@ import Purchaser from "../Purchaser";
 
 function ItemDetail({ product }) {
   if (!product) {
-    return <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
+    return <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
   } else {
     return (
       <div className="detailContainer">

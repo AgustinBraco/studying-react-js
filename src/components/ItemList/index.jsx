@@ -1,14 +1,55 @@
 import "./itemlist.css";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../../context";
 
-function ItemList({ products }) {
+// Router
+import { Link } from "react-router-dom";
+
+// Firebase
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
+
+function ItemList({ brandName }) {
   const { setCount } = useContext(Context);
   setCount(0);
 
+  const [products, setProducts] = useState(null);
+
+  useEffect(() => {
+    const db = getFirestore();
+    const itemsCollection = collection(db, "items");
+    setProducts(null);
+
+    setTimeout(() => {
+      if (brandName.id === "All") {
+        getDocs(itemsCollection)
+          .then((snapshot) => {
+            const docs = snapshot.docs;
+            setProducts(docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+          })
+          .catch((err) => console.log("Catch error:", err));
+      } else {
+        const queryResult = query(
+          itemsCollection,
+          where("brand", "==", brandName.id)
+        );
+        getDocs(queryResult)
+          .then((snapshot) => {
+            const docs = snapshot.docs;
+            setProducts(docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+          })
+          .catch((err) => console.log("Catch error:", err));
+      };
+    }, 200);
+  }, [brandName]);
+
   if (!products) {
-    return <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
+    return <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
   } else {
     return (
       <div className="cardsContainer">

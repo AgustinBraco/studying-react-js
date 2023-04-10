@@ -115,12 +115,13 @@ export function CustomProvider({ children }) {
       const collectionRef = collection(db, "orders");
       addDoc(collectionRef, order)
       .then((res) => {
+        let date = new Date();
+        let dateNow = date.toLocaleString();
         const orderId = res.id;
         swal({
           title: "Thanks for your purchase",
-          text: `Your order ID is \n ${orderId}`,
+          text: `ORDER: ${orderId} \n DATE: ${dateNow} \n TOTAL: U$ ${totalPrice}`,
           icon: "success",
-          timer: 2500,
           button: false,
         });
 

@@ -70,8 +70,8 @@ function Home() {
     return (
       <div className="logedContainer">
         <p className="logedWelcome">Welcome</p>
-        <p className="logedUser">Your user is: {user}</p>
-        <p className="logedPassword">Your password is: {password}</p>
+        <p className="logedUser">Your user is: {userStorage}</p>
+        <p className="logedPassword">Your password is: {passwordStorage}</p>
       <button onClick={deleteUser} className="logedButton">Delete user</button>
     </div>
     );
