@@ -50,7 +50,7 @@
 
 .buyButton:disabled {
     background-color: lightgrey;
-        transform: scale(1);
+    transform: scale(1);
 }
 
 .checkoutCartLink {
