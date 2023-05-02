@@ -27,7 +27,6 @@ function Cart() {
           <Link to={"/checkout"} className="checkoutButton">
             CHECKOUT
           </Link>
-          {/* <button className="topCartButton" onClick={clearCart}>CLEAR</button> */}
           <div onClick={clearCart} className="paperbinDiv">
             <img src="/assets/images/paper-bin.png" alt="paper-bin-image" className="paperbinImage"/>
           </div>

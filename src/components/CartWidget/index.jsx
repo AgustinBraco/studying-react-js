@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function CartWidget() {
   const { cartStorage } = useContext(Context);
 
-  const cartNumber = cartStorage.reduce((acc, product) => acc + product.quantity, 0)
+  const cartNumber = cartStorage.reduce((acc, product) => acc + product.quantity, 0);
 
   return (
     <div className="cartContainer">

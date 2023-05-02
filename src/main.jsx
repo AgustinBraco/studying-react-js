@@ -16,13 +16,13 @@ import ErrorRoot from './routes/error';
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDCShip-k1X2Gu2xcIwaf6tvsteDf6tqJU",
-  authDomain: "react-project-b9c82.firebaseapp.com",
-  projectId: "react-project-b9c82",
-  storageBucket: "react-project-b9c82.appspot.com",
-  messagingSenderId: "150175569333",
-  appId: "1:150175569333:web:2842cb90f4e49137f475fc",
-  measurementId: "G-L0HX1CPZQF",
+  apiKey: APIKEY,
+  authDomain: DOMAIN,
+  projectId: PROJECTID,
+  storageBucket: BUCKET,
+  messagingSenderId: SENDERID,
+  appId: APPID,
+  measurementId: MEASUREMENTID,
 };
 
 initializeApp(firebaseConfig);
